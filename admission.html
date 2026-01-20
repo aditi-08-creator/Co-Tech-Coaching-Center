@@ -1,0 +1,242 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admission Form</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-image: url("two.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-top: 20px;
+      }
+      .navbar {
+        margin-bottom: 30px;
+      }
+      .form-section {
+        background-color: rgba(255, 192, 203, 0.9);
+        padding: 20px;
+        border-radius: 8px;
+        margin: 20px auto;
+        max-width: 600px;
+      }
+      .form-title {
+        color: #ff3388;
+        font-weight: bold;
+        font-size: 28px;
+        text-decoration: underline;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .form-subtitle {
+        color: #ff3388;
+        font-weight: bold;
+        font-size: 20px;
+        text-decoration: underline;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 20px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      td {
+        padding: 10px;
+        border: 1px solid #ddd;
+      }
+      input[type="text"],
+      input[type="date"] {
+        width: 100%;
+        padding: 5px;
+        box-sizing: border-box;
+      }
+      .submit-btn {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .submit-btn img {
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+      .submit-btn img:hover {
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm bg-light navbar-light">
+      <div class="container-fluid">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="course.html">Courses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="result.html">Results</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="admission.html">Admission</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="form-section">
+      <div class="form-title">Admission Form</div>
+      <h5 style="text-align: center; margin-bottom: 20px">
+        Mandatory fields are marked with asterisk (*)
+      </h5>
+
+      <form name="f1" method="POST">
+        <table>
+          <tr>
+            <td style="width: 40%; font-weight: bold">Student name*</td>
+            <td><input type="text" name="student_name" required /></td>
+          </tr>
+          <tr>
+            <td style="font-weight: bold">Father's name*</td>
+            <td><input type="text" name="father_name" required /></td>
+          </tr>
+          <tr>
+            <td style="font-weight: bold">Correspondence course for*</td>
+            <td>
+              <label
+                ><input type="radio" name="course_type" value="JEE" required />
+                JEE</label
+              >
+              <label
+                ><input type="radio" name="course_type" value="NEET" required />
+                NEET</label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="course_type"
+                  value="Early Lead"
+                  required
+                />
+                Early Lead</label
+              >
+            </td>
+          </tr>
+          <tr>
+            <td style="font-weight: bold">Current class</td>
+            <td><input type="text" name="current_class" /></td>
+          </tr>
+          <tr>
+            <td style="font-weight: bold">Date of birth*</td>
+            <td><input type="date" name="dob" required /></td>
+          </tr>
+          <tr>
+            <td style="font-weight: bold">School name</td>
+            <td><input type="text" name="school_name" /></td>
+          </tr>
+          <tr>
+            <td style="font-weight: bold">Permanent address*</td>
+            <td><input type="text" name="address" required /></td>
+          </tr>
+          <tr>
+            <td style="font-weight: bold">Mobile* (Primary)</td>
+            <td><input type="text" name="mobile_primary" required /></td>
+          </tr>
+          <tr>
+            <td style="font-weight: bold">Mobile (Alternate)</td>
+            <td><input type="text" name="mobile_alternate" /></td>
+          </tr>
+          <tr>
+            <td style="font-weight: bold">Email ID</td>
+            <td><input type="text" name="email" /></td>
+          </tr>
+        </table>
+      </form>
+
+      <div class="form-subtitle">Details of Academic Achievement (if any)</div>
+
+      <form name="f2" method="POST">
+        <table>
+          <tr>
+            <td style="width: 40%; font-weight: bold">NTSE Qualified</td>
+            <td>
+              <label
+                ><input type="radio" name="ntse_qualified" value="Yes" />
+                Yes</label
+              >
+              <label
+                ><input type="radio" name="ntse_qualified" value="No" />
+                No</label
+              >
+            </td>
+          </tr>
+          <tr>
+            <td style="font-weight: bold">JEE (Advanced)</td>
+            <td>
+              Year:
+              <input type="text" name="jee_adv_year" style="width: 80px" />
+              Marks:
+              <input type="text" name="jee_adv_marks" style="width: 80px" />
+            </td>
+          </tr>
+          <tr>
+            <td style="font-weight: bold">JEE (Main)</td>
+            <td>
+              Year:
+              <input type="text" name="jee_main_year" style="width: 80px" />
+              Marks:
+              <input type="text" name="jee_main_marks" style="width: 80px" />
+            </td>
+          </tr>
+          <tr>
+            <td style="font-weight: bold">NEET</td>
+            <td>
+              Year:
+              <input type="text" name="neet_year" style="width: 80px" /> Marks:
+              <input type="text" name="neet_marks" style="width: 80px" />
+            </td>
+          </tr>
+          <tr>
+            <td style="font-weight: bold">Merit/Position in board</td>
+            <td><input type="text" name="merit_position" /></td>
+          </tr>
+          <tr>
+            <td style="font-weight: bold">Other academic awards</td>
+            <td><input type="text" name="other_awards" /></td>
+          </tr>
+        </table>
+      </form>
+
+      <h5 style="margin-top: 30px; text-align: center">
+        Attach the online payment receipt
+      </h5>
+      <div style="text-align: center; margin: 20px 0">
+        <input
+          type="file"
+          name="payment_receipt"
+          accept="image/*,application/pdf"
+        />
+      </div>
+
+      <div class="submit-btn">
+        <a href="declaration.html"
+          ><img
+            src="done.jpeg"
+            width="70px"
+            alt="Submit"
+            title="Continue to Declaration"
+        /></a>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
