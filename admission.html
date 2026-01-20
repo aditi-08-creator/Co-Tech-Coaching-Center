@@ -10,20 +10,51 @@
     />
     <style>
       body {
-        background-image: url("two.png");
+        background-image: url("https://picsum.photos/1920/1080?random=20");
         background-repeat: no-repeat;
         background-size: cover;
+        background-attachment: fixed;
         padding-top: 20px;
+        position: relative;
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url("https://picsum.photos/1920/1080?random=20");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        filter: blur(8px);
+        z-index: -2;
+      }
+      body::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: -1;
       }
       .navbar {
         margin-bottom: 30px;
+        position: relative;
+        z-index: 10;
       }
       .form-section {
-        background-color: rgba(255, 192, 203, 0.9);
+        background-color: rgba(255, 255, 255, 0.95);
         padding: 20px;
         border-radius: 8px;
         margin: 20px auto;
         max-width: 600px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        position: relative;
+        z-index: 1;
       }
       .form-title {
         color: #ff3388;
@@ -223,17 +254,17 @@
           type="file"
           name="payment_receipt"
           accept="image/*,application/pdf"
+          required
         />
       </div>
 
       <div class="submit-btn">
-        <a href="declaration.html"
-          ><img
-            src="done.jpeg"
-            width="70px"
-            alt="Submit"
-            title="Continue to Declaration"
-        /></a>
+        <a
+          href="declaration.html"
+          class="btn btn-success btn-lg"
+          style="margin-top: 20px"
+          >Continue to Declaration</a
+        >
       </div>
     </div>
 
