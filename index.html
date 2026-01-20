@@ -9,6 +9,68 @@
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .section-link {
+        display: inline-block;
+        margin: 10px 5px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+      .section-link:hover {
+        background-color: #0056b3;
+        color: white;
+      }
+      .page-section {
+        margin: 40px 0;
+        padding: 30px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        border-left: 4px solid #007bff;
+      }
+      .page-section h2 {
+        color: #333;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #007bff;
+        padding-bottom: 10px;
+      }
+      .course-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin: 20px 0;
+      }
+      .course-card {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+      .course-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+      .course-card img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 15px;
+      }
+      .quick-links {
+        background: white;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 8px;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
@@ -26,16 +88,16 @@
             <div class="container-fluid">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link active" href="index.html">Home</a>
+                  <a class="nav-link active" href="#home">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="abcc.html">About Us</a>
+                  <a class="nav-link" href="#about">About Us</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="course.html">Courses</a>
+                  <a class="nav-link" href="#courses">Courses</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="result.html">Results</a>
+                  <a class="nav-link" href="#results">Results</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="admission.html">Admission</a>
@@ -45,9 +107,10 @@
           </nav>
         </div>
       </div>
+
       <div class="row">
         <div class="col-md-12">
-          <!-- Carousel -->
+          <!-- Home Carousel -->
           <div id="demo" class="carousel slide" data-bs-ride="carousel">
             <!-- Indicators/dots -->
             <div class="carousel-indicators">
@@ -67,41 +130,62 @@
                 data-bs-target="#demo"
                 data-bs-slide-to="2"
               ></button>
+              <button
+                type="button"
+                data-bs-target="#demo"
+                data-bs-slide-to="3"
+              ></button>
             </div>
 
             <!-- The slideshow/carousel -->
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <img
-                  src="coa2.jpg"
-                  alt="Los Angeles"
+                  src="https://picsum.photos/1200/400?random=1"
+                  alt="Coaching Center"
                   class="d-block"
                   style="width: 100%"
                 />
-              </div>
-              <div class="carousel-item active">
-                <img
-                  src="comp.jpg"
-                  alt="Los Angeles"
-                  class="d-block"
-                  style="width: 100%"
-                />
+                <div class="carousel-caption">
+                  <h3>Welcome to CoTech</h3>
+                  <p>Transforming Careers, Building Futures</p>
+                </div>
               </div>
               <div class="carousel-item">
                 <img
-                  src="coa4.jpg"
-                  alt="Chicago"
+                  src="https://picsum.photos/1200/400?random=2"
+                  alt="Modern Education"
                   class="d-block"
                   style="width: 100%"
                 />
+                <div class="carousel-caption">
+                  <h3>Best in Class Education</h3>
+                  <p>Expert Faculty & Advanced Curriculum</p>
+                </div>
               </div>
               <div class="carousel-item">
                 <img
-                  src="coach.jpg"
-                  alt="New York"
+                  src="https://picsum.photos/1200/400?random=3"
+                  alt="Successful Students"
                   class="d-block"
                   style="width: 100%"
                 />
+                <div class="carousel-caption">
+                  <h3>100% Success Rate</h3>
+                  <p>Join Our Winners</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="https://picsum.photos/1200/400?random=4"
+                  alt="Expert Coaching"
+                  class="d-block"
+                  style="width: 100%"
+                />
+                <div class="carousel-caption">
+                  <h3>Expert Guidance</h3>
+                  <p>25 Years of Excellence in Coaching</p>
+                </div>
               </div>
             </div>
 
@@ -125,357 +209,257 @@
           </div>
         </div>
       </div>
+
+      <!-- Quick Navigation Section -->
+      <div class="row" style="margin-top: 30px">
+        <div class="col-md-12">
+          <div class="quick-links">
+            <h4>Scroll Through Our Pages Below</h4>
+            <a href="#about" class="section-link">About Us</a>
+            <a href="#courses" class="section-link">Our Courses</a>
+            <a href="#results" class="section-link">Results</a>
+            <a href="admission.html" class="section-link">Apply Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- About Section -->
+      <div id="about" class="page-section">
+        <h2>About CoTech Coaching Center</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <img
+              src="https://picsum.photos/500/350?random=11"
+              alt="About Us"
+              style="max-width: 100%; border-radius: 8px"
+            />
+          </div>
+          <div class="col-md-6">
+            <p>
+              <strong>CoTech Coaching Center</strong> is a well-known coaching
+              institute running successfully since the last 25 years in
+              Prayagraj. We believe in providing all deserving students with the
+              best curriculum and pedagogy along with the highest quality of
+              education in coaching for all classes (all boards) and entrance
+              exams (NEET/JEE).
+            </p>
+
+            <p>
+              CoTech brings out the latent strengths of every student so that
+              they feel motivated and applauded for their strengths and explore
+              the greater depth of their potential.
+            </p>
+
+            <p>
+              <strong>Our Team:</strong> CCC has a team of highly qualified and
+              competent teachers comprising experienced faculties, graduates,
+              and post-graduates from top-grade universities.
+            </p>
+
+            <p>
+              <strong>Small Batch Size:</strong> Our small batch size helps each
+              student with a large scope for fruitful, one-to-one interaction
+              between student and teacher.
+            </p>
+
+            <p>
+              <strong>Flexible Timings:</strong> Morning and Evening Batches are
+              provided considering the comfort of students and parents regarding
+              school/college timings and availability of transportation.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Courses Section -->
+      <div id="courses" class="page-section">
+        <h2>Our Courses</h2>
+        <div class="course-grid">
+          <div class="course-card">
+            <h4>9 to 12 Class (All Boards)</h4>
+            <img
+              src="https://picsum.photos/300/250?random=6"
+              alt="School Classes"
+            />
+            <p>
+              Comprehensive coverage of all subjects from Class 9 to 12 across
+              all major boards - CBSE, ICSE, and State Boards.
+            </p>
+            <a href="course.html" class="btn btn-sm btn-primary">Learn More</a>
+          </div>
+
+          <div class="course-card">
+            <h4>Foundation Courses</h4>
+            <img
+              src="https://picsum.photos/300/250?random=7"
+              alt="Foundation Courses"
+            />
+            <p>
+              Build strong fundamentals with our specially designed foundation
+              courses for classes 11 & 12. Perfect for JEE and NEET aspirants.
+            </p>
+            <a href="course.html" class="btn btn-sm btn-primary">Learn More</a>
+          </div>
+
+          <div class="course-card">
+            <h4>JEE Courses</h4>
+            <img
+              src="https://picsum.photos/300/250?random=8"
+              alt="JEE Courses"
+            />
+            <p>
+              Comprehensive JEE Main and JEE Advanced preparation. Crash courses
+              and regular batches available for all levels.
+            </p>
+            <a href="course.html" class="btn btn-sm btn-primary">Learn More</a>
+          </div>
+
+          <div class="course-card">
+            <h4>Programming Fundamentals</h4>
+            <img
+              src="https://picsum.photos/300/250?random=9"
+              alt="Programming"
+            />
+            <p>
+              Master the basics of programming with hands-on coding exercises.
+              Learn C++, Java, and Python from industry experts.
+            </p>
+            <a href="course.html" class="btn btn-sm btn-primary">Learn More</a>
+          </div>
+
+          <div class="course-card">
+            <h4>NEET Courses</h4>
+            <img
+              src="https://picsum.photos/300/250?random=10"
+              alt="NEET Courses"
+            />
+            <p>
+              Complete NEET preparation program with focus on Physics,
+              Chemistry, and Biology. Achieve your medical dreams with our
+              expert guidance.
+            </p>
+            <a href="course.html" class="btn btn-sm btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results Section -->
+      <div id="results" class="page-section">
+        <h2>Our Results & Achievements</h2>
+        <div class="carousel slide" data-bs-ride="carousel">
+          <!-- Indicators/dots -->
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target=".carousel"
+              data-bs-slide-to="0"
+              class="active"
+            ></button>
+            <button
+              type="button"
+              data-bs-target=".carousel"
+              data-bs-slide-to="1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target=".carousel"
+              data-bs-slide-to="2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target=".carousel"
+              data-bs-slide-to="3"
+            ></button>
+          </div>
+
+          <!-- The slideshow/carousel -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="https://picsum.photos/800/400?random=12"
+                alt="Student Success"
+                class="d-block"
+                style="width: 100%"
+              />
+              <div class="carousel-caption">
+                <h3>CoTech Success Stories</h3>
+                <p>Brilliant minds from our coaching center</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://picsum.photos/800/400?random=13"
+                alt="Student Results"
+                class="d-block"
+                style="width: 100%"
+              />
+              <div class="carousel-caption">
+                <h3>Outstanding Results</h3>
+                <p>You could be next success story</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://picsum.photos/800/400?random=14"
+                alt="Awards"
+                class="d-block"
+                style="width: 100%"
+              />
+              <div class="carousel-caption">
+                <h3>Awards & Recognition</h3>
+                <p>Hard work must be appreciated</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://picsum.photos/800/400?random=15"
+                alt="Achievements"
+                class="d-block"
+                style="width: 100%"
+              />
+              <div class="carousel-caption">
+                <h3>Student Achievements</h3>
+                <p>Excellence in every exam</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Left and right controls/icons -->
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="row" style="margin: 40px 0">
+        <div class="col-md-12">
+          <div class="alert alert-info text-center" style="padding: 30px">
+            <h4>Ready to Transform Your Career?</h4>
+            <p>
+              Join thousands of successful students at CoTech Coaching Center
+            </p>
+            <a href="admission.html" class="btn btn-success btn-lg"
+              >Apply for Admission</a
+            >
+          </div>
+        </div>
+      </div>
+
       <div class="row">
         <div class="col-md-12"></div>
       </div>
     </div>
   </body>
-</html>
-
-<html>
-<head>
-<title>ad.com</title>
-</head>
-<body style="background-image:url('two.png'); background-repeat: no-repeat; background-size: cover;">
-	<center><p style="margin-left: 5px;">
-<font face="impact" size="+5" color="#FF3388"><u>Admission Form</u></font><br>
-<h3>Mandatory fields are marked with asterisk(*)</h3>
-<table>
-<tr>
-<td>
-<table width="500px" bgcolor="pink" cellspacing="10px">
-<form name="f1">
-	<tr>
-<td>Student name*</td><td><input type="text"name="t1"/></td>
-</tr>
-<tr>
-<td>Father's name*</td><td><input type="text"name="t1"/></td>
-</tr>
-
-<tr>
-<td>Correspondence course for*</td>
-<td><input type="radio"name="r1">JEE</td>
-<td><input type="radio"name="r1">NEET</td>
-<td><input type="radio"name="r1">Early lead
-</td>
-</tr>
-<tr><td>Current class</td><td><input type="text"name="cc"></td></tr>
-<tr>
-<td>Date of birth*</td>
-<td><input type="date"name="d1"></td>
-</tr>
-<tr><td>School name</td><td><input type="text"name="cs"></td></tr>
-<tr><td>Permanent address*</td><td><input type="text"name="cpp"></td></tr>
-<tr>
-<td>Mobile*(Primary)</td><td><input type="text"name="p1"></td>
-<td>Mobile(Alternate)</td><td><input type="text"name="p11"></td>
-</tr>
-<tr>
-<td>Email ID</td>
-<td><input type="text"name="e1"></td>
-</tr>
-</tr>
-</form></table></p>
-<p  style="margin-left: 100px;">
-<font face="impact" size="+3" color="#FF3388"><u>Details of academic achievement (if any)</u></font><br><br>
-<table>
-<tr>
-<td>
-<table width="500px" bgcolor="pink" cellspacing="30px">
-<form name="f2">
-<tr><td>NTSE Qualified</td><td><input type="radio"name="qq">Yes </td><td>  <input type="radio"name="qq">No</td></tr>
-<tr><td>JEE(Advanced)</td><td>Year<input type="text"name="yy"> </td><td> Marks<input type="text"name="mm"></td></tr>
-<tr><td>JEE(Main)</td><td>Year<input type="text"name="yyy"></td><td>  Marks<input type="text"name="mmm"></td></tr>
-<tr><td>NEET</td><td>Year<input type="text"name="yhy"> </td><td> Marks<input type="text"name="mmn"></td></tr>
-<tr><td>Merit/Position in board</td><td><input type="text"name="jj"></td></tr>
-<tr><td>Other academic awards</td><td><input type="text"name="jhj"></td></tr>
-</tr>
-</form></table></p></center>
-<h3>Attach the online payment receipt
-<input type="image" src="att.png" width="30px"></h3><br>
-<center><a href="dec.html"><img src="done.jpeg" width="70px"></a></center>
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coaching Center Courses</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #black;
-    }
-
-    header {
-      background-color: #black;
-      color: #black;
-      text-align: center;
-      padding: 1em;
-    }
-
-    section {
-      padding: 20px;
-      margin: 20px;
-      background-color: #gray;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(2, 2, 2, 2.1);
-    }
-
-    h2 {
-      color: #black;
-    
-    }
-    p 
-} 
-        img {
-            max-width: 100%;
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
-    .course {
-      margin-bottom: 20px;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>Cotech coaching centre Courses</h1>
-      <img src="main.jpg">
-
-  </header>
-
-  <section>
-    <div class="course">
-      <h2>9 to 12 class (all boards)</h2>
-         <img src="school.jpg">
-
-     <p> About All subjects .</p>
-    </div>
-
-    <div class="course">
-      <h2>Foundation courses</h2>
-         <img src="found.jpg">
-
-      <p>Explore the core principle of 11 & 12.</p>
-    </div>
-	
-    <div class="course">
-      <h2>jee courses</h2>
-         <img src="iit.jpg">
-
-
-      <p>Explore the crash courses of mains & advance.</p>
-    </div>
-
-    <div class="course">
-      <h2>Programming Fundamentals</h2>
-         <img src="compu.jpg">
-                                                                                                                                                                                                                                                                                                                               <p>Learn the basics of programming with hands-on coding exercises.</p>
-    </div>
-
-    <div class="course">
-      <h2>NEET courses</h2>
-         <img src="neet.jpg">
-
-      <p>Explore the core principle of basic </p>
-    </div>
-  </section>
-
-</body>
-</html>
-<html>
-<head>
-<title>declare.com</title></head><body><font face="Comic Sans MS" size="+5" color="black"><center>Declaration</center></font><br>
-<table>
-<table width="1500px" bgcolor="#A5F9F9 " cellspacing="px"><tr><td>
-<font face="century" size="+2" color="#AF5959"><p>
-1. I decide that all the information furnished in this application form is correct to the best of my knowledge. I understand that in the event of any information found to be incorrect or false, my further deliveries if any would not be delivered.</p><p>
-2. I agree to abide by the policies, rules & regulations of the institute as amended time to time.</p><p>
-3. Photocopy of 10th/12th Board Marksheet also required.</p><p>
-4. I will not claim the fees once deposited.</p></td></tr>
-</table>
-<center><a href="tq.html"><img src="sub.png" width="90px"></a></center>
-</font></body></html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Coaching Website</title>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <style>
-        
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-       .social-links a{
-       margin: 20px;
-       height: 40px;
-       }
-       img{
-        height: 400px;
-        width: 100%;
-       }
-       h1{
-        color: brown;
-       }
-      .section{
-        background-color: rgb(255, 255, 255);
-        font-size: xx-large;
-      }
-      body{
-        background-color: rgb(255, 255, 255);
-      }
-        
-    </style>
-</head>
-<body>
-    <h1>Home</h1>
-    <img src="abou.jpg" alt="">
-    <header>
-	
-        <h2>Welcome to CoTech Center</h2>
-	
-        
-            
-        
-    </header>
-
-    <section ><div class="section">
-        <h2>About Us</h2>
-        <p>CoTech Coaching Center a well known, coaching institute running successfully since last 25 years in Prayagraj. We believe in providing all deserving students in Prayagraj with the best curriculum and pedagogy along with the highest quality of education in coaching for all classes(all boards) and entrance exams(NEET/JEE)</p>
-
-<p>CoTech Coaching Center brings out of the latent strengths of every student so that they feel motivated and applauded for their strengths and explore the greater depth of their potential.</p><p>
-
-CCC is not just another coaching class, we believe in teamwork and our aim is to provide excellent training in all subjects i.e, Mathematics, Physics, Chemistry, Biology, Computer and English to the level of school and All India Level Entrance Exams. CCC has team of highly qualified and competent teachers comprising of experienced faculties, graduates and post-graduates from top grade universities.</p>
-<p>
-Our small batch size helps each student and here is a large scope to a fruitful, one to one interaction between student and teacher.</p><p>
-
-Morning and Evening Batches are provided considering the comfort of students and parents regarding School/college timings availability of transportation etc.</p><p>
- The founder "Dhananjay Sharma" stands for education for every child irrespective of it's economic status.</p>
-<p>
-
-Students prefer CCC as it is the combination of unique features of the programme, dedication of our faculty, child centric approach from the management, understanding the needs of the students and last but not the least consistent results throughout the years.</p>
-    </div> </section>
-
-    <section><div class="section2">
-        <h3>follow us</h3>
-        <div class="social-links">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://web.tegram.org/"><i class="fab fa-telegram"></i></a>
-            <a href="https://www.am.com//"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/feed/?trk=guest_homepage-"><i class="fab fa-linkedin-in"></i></a>
-            
-        </div></div>     
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Coaching Website. All rights reserved.</p>
-    </footer>
-</body>
-</html>
-<html>
-<head>
-<title>thank.com</title></head><body><center>
-<img src="tick.png" width="200px" height="200px">
-<font face="Comic Sans MS" size="+5" color="black">Thank You</font><br>
-<h1>Your form was submitted successfully</h1>
-<a href="cotech.html"><img src="hoomee.jpg" width="80px"></a>
-</center>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>RESULTS</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-</head>
-
-<body>
-
-    <div class="container">
-        <div class="row" style="margin-top:10px;">
-            <div class="col-md-12">
-                <div class="alert alert-success">
-                <h1>RESULTS</h1>
-		<font color="red">
-                </div>
-            </div>
-        </div>
-        <div class="row" style="margin-top:-20px;">
-            <div class="col-md-12">
-                <!-- Carousel -->
-                <div id="demo" class="carousel slide" data-bs-ride="carousel">
-
-                    <!-- Indicators/dots -->
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-                        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-                        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-                    </div>
-
-                    <!-- The slideshow/carousel -->
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="r1.jpg" alt="Los Angeles" class="d-block" style="width:100%">
-                            <div class="carousel-caption">
-                                <h3>cotech center</h3>
-                                <p>brilliant mind of our coaching</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="r2.jpg" alt="Chicago" class="d-block" style="width:90%">
-                            <div class="carousel-caption">
-                                <h3>some more rsults</h3>
-                                <p>You could be next</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="r3.jpg" alt="New York" class="d-block" style="width:100%">
-                            <div class="carousel-caption">
-                                <h3>awards</h3>
-                                <p>hard work must be appreciated</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Left and right controls/icons -->
-                    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </button>
-                </div>
-
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="alert alert-success">
-                <h6>Developed by Anushka Mishra</h6>
-            </div>
-
-            </div>
-        </div>
-    </div>
-
-</body>
-
 </html>
